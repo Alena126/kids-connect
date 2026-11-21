@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   // Настройки для GitHub Pages
   app: {
-    baseURL: '/zadacha/', 
+    baseURL: '/kids-connect/', 
     buildAssetsDir: 'assets'
   }
 })
