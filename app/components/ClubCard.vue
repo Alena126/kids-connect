@@ -1,10 +1,12 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const getImgUrl = (path: string) => `${config.app.baseURL}${path.replace(/^\//, '')}`
 defineProps<{ club: any }>()
 </script>
 <template>
   <div class="card">
     <div class="card-image">
-      <img :src="club.image" alt="Фото" />
+      <img :src="getImgUrl(club.image)" alt="Фото" />
     </div>
     
     <div class="card-content">
@@ -21,18 +23,18 @@ defineProps<{ club: any }>()
       <p class="card-tag">{{ club.tags[0] }}</p>
       
       <div class="info-row">
-        <img src="/icon-user.png" class="icon-img" /> {{ club.age }}
+        <img :src="getImgUrl('/icon-user.png')" class="icon-img" /> {{ club.age }}
       </div>
       <div class="info-row">
-        <img src="/icon-pin.png" class="icon-img" /> {{ club.address }}
+        <img :src="getImgUrl('/icon-pin.png')" class="icon-img" /> {{ club.address }}
       </div>
       <div class="info-row">
-        <img src="/icon-network.png" class="icon-img" /> {{ club.place }}
+        <img :src="getImgUrl('/icon-network.png')" class="icon-img" /> {{ club.place }}
       </div>
       
       <div class="schedule-row">
         <span class="schedule-days">
-          <img src="/icon-clock.png" class="icon-img" /> {{ club.schedule[0].days }}
+          <img :src="getImgUrl('/icon-clock.png')" class="icon-img" /> {{ club.schedule[0].days }}
         </span>
         <span class="time-tag">{{ club.schedule[0].time }}</span>
         <span class="time-tag" v-if="club.schedule[1]">{{ club.schedule[1].time }}</span>
@@ -47,15 +49,7 @@ defineProps<{ club: any }>()
 </template>
 
 <style scoped>
-.card { 
-  background: white; 
-  border-radius: 8px; 
-  display: flex; 
-  margin-bottom: 15px; 
-  border: 1px solid #EAEAEA; /* Серая рамка */
-  border-top: 3px solid #7B2530; /* Бордовая полоса сверху */
-  overflow: hidden;
-}
+.card { background: white; border-radius: 8px; display: flex; margin-bottom: 15px; border: 1px solid #EAEAEA; border-top: 3px solid #7B2530; overflow: hidden; }
 .card-image { width: 200px; background: #F0F0F0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .card-image img { width: 100%; height: 100%; object-fit: cover; }
 .card-content { padding: 20px; flex: 1; position: relative; }
