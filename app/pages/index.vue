@@ -13,6 +13,8 @@ const groupedClubs = clubs.reduce((acc, club) => {
 
 <template>
   <div class="catalog-layout">
+    
+    <!-- Левая часть: Список кружков -->
     <div class="main-col">
       <div class="search-panel">
         <div class="search-input-wrapper">
@@ -32,7 +34,10 @@ const groupedClubs = clubs.reduce((acc, club) => {
       </div>
     </div>
 
+    <!-- Правая часть: Фильтры -->
     <div class="sidebar-wrapper">
+      
+      <!-- Заголовок и кнопка "На карте" -->
       <div class="filters-top-bar">
         <h2 class="filter-main-title">Фильтры</h2>
         <button class="btn-map">
@@ -40,12 +45,21 @@ const groupedClubs = clubs.reduce((acc, club) => {
         </button>
       </div>
 
+      <!-- Сама карточка с фильтрами -->
       <div class="sidebar-card">
-        <!-- ... (остальной код фильтров без изменений, я его сократил для удобства, но в твоем файле он должен остаться) ... -->
+        
+        <!-- Возраст -->
         <div class="filter-group">
           <p class="filter-title">Возраст</p>
-          <select class="filter-select-flat"><option>Любой</option></select>
+          <select class="filter-select-flat">
+            <option>Любой</option>
+            <option>3-5 лет</option>
+            <option>6-9 лет</option>
+            <option>10-14 лет</option>
+          </select>
         </div>
+        
+        <!-- Пол -->
         <div class="filter-group">
           <p class="filter-title">Пол</p>
           <div class="checkbox-row">
@@ -53,20 +67,65 @@ const groupedClubs = clubs.reduce((acc, club) => {
             <label class="custom-checkbox"><input type="checkbox" checked> <span>Женский</span></label>
           </div>
         </div>
+
+        <!-- Каталог (ВОТ ОН, ВЕСЬ НА МЕСТЕ) -->
         <div class="filter-group" style="border-bottom: none; padding-bottom: 0;">
           <p class="filter-title">Каталог</p>
-          <div class="catalog-block"><div class="catalog-header"><span>Силовой спорт <span class="count">3</span></span> <span class="arrow">^</span></div></div>
-          <div class="catalog-block"><div class="catalog-header"><span>Единоборства <span class="count">2</span></span> <span class="arrow">^</span></div></div>
-          <!-- Тут твои остальные категории -->
+          
+          <!-- Силовой спорт -->
+          <div class="catalog-block">
+            <div class="catalog-header"><span>Силовой спорт <span class="count">3</span></span> <span class="arrow">^</span></div>
+            <div class="catalog-sub-items">
+              <div class="catalog-sub">- Тяжелая атлетика <span class="count">1</span></div>
+              <div class="catalog-sub">- Пауэрлифтинг <span class="count">1</span></div>
+            </div>
+          </div>
+
+          <!-- Единоборства -->
+          <div class="catalog-block">
+            <div class="catalog-header"><span>Единоборства <span class="count">2</span></span> <span class="arrow">^</span></div>
+            <div class="catalog-sub-items">
+              <div class="catalog-sub">- Вольная борьба <span class="count">1</span></div>
+              <div class="catalog-sub">- Дзюдо <span class="count">1</span></div>
+            </div>
+          </div>
+          
+          <!-- Остальной список -->
+          <div class="catalog-block"><div class="catalog-header"><span>ДПИ и ремесла</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Техническое конструирование</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Словесность</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Иностранные языки</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Развитие интеллекта</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Информационные технологии</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>История и Традиции</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Педагогика</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Музыка и звук</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Пение</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Хореография(танцы)</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Зрелищные искусства</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Мода и стиль</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Познавательные развлечения</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Туризм</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Естественные науки</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Люди и животные</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Эстетические виды спорта</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Технические виды спорта</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Командно-игровой спорт</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Индивидуально-игровой спорт</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Водные виды спорта</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Легкая атлетика и гимнастика</span> <span class="arrow">v</span></div></div>
+          <div class="catalog-block"><div class="catalog-header"><span>Физкультура</span> <span class="arrow">v</span></div></div>
         </div>
+
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Стили оставляем как были */
 .catalog-layout { display: grid; grid-template-columns: 1fr 320px; gap: 30px; align-items: start; }
+
+/* Левая колонка */
 .search-panel { display: flex; gap: 15px; margin-bottom: 30px; }
 .search-input-wrapper { flex: 1; display: flex; align-items: center; background: white; border-radius: 8px; padding: 0 15px; border: 1px solid #EAEAEA; }
 .search-icon-img { width: 16px; height: 16px; object-fit: contain; opacity: 0.5; margin-right: 10px; }
@@ -76,22 +135,38 @@ const groupedClubs = clubs.reduce((acc, club) => {
 .toggle:hover { background: #f9f9f9; }
 .toggle.active { background: #7B2530; color: white; }
 .category-title { font-size: 20px; margin-bottom: 15px; color: #7B2530; font-weight: 600; }
+
+/* Правая колонка */
 .sidebar-wrapper { display: flex; flex-direction: column; }
 .filters-top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .filter-main-title { font-size: 20px; font-weight: 600; color: #2D2D2D; }
 .btn-map { background: white; border: 1px solid #EAEAEA; padding: 8px 15px; border-radius: 6px; font-size: 13px; cursor: pointer; color: #333; display: flex; align-items: center; gap: 8px; }
 .pin-icon { width: 14px; opacity: 0.8; }
-.sidebar-card { background: white; padding: 25px; border-radius: 8px; border: 1px solid #EAEAEA; border-top: 3px solid #7B2530; }
+
+.sidebar-card { 
+  background: white; 
+  padding: 25px; 
+  border-radius: 8px; 
+  border: 1px solid #EAEAEA; 
+  border-top: 3px solid #7B2530; 
+}
+
 .filter-group { margin-bottom: 25px; border-bottom: 1px solid #F0F0F0; padding-bottom: 20px; }
 .filter-title { font-weight: 600; font-size: 14px; margin-bottom: 12px; color: #2D2D2D; }
 .filter-select-flat { width: 100%; padding: 8px 0; border: none; border-bottom: 1px solid #7B2530; background: transparent; color: #666; outline: none; cursor: pointer; font-size: 14px; appearance: auto; }
 .checkbox-row { display: flex; gap: 20px; }
 .custom-checkbox { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; color: #333; }
 .custom-checkbox input { margin: 0; }
+
+/* Стили каталога */
 .catalog-block { margin-bottom: 8px; }
 .catalog-header { display: flex; justify-content: space-between; font-size: 14px; color: #333; cursor: pointer; padding: 4px 0; }
 .catalog-header:hover { color: #7B2530; }
 .count { color: #CCC; margin-left: 5px; font-size: 12px; }
 .arrow { color: #999; font-size: 10px; transform: scaleY(0.7); }
+.catalog-sub-items { margin-top: 5px; margin-bottom: 10px; }
+.catalog-sub { font-size: 13px; color: #888; margin-left: 15px; margin-bottom: 5px; cursor: pointer; display: flex; justify-content: space-between; }
+.catalog-sub:hover { color: #7B2530; }
+
 @media (max-width: 1024px) { .catalog-layout { grid-template-columns: 1fr; } }
 </style>
