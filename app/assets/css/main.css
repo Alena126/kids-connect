@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-page: #F4F4F5;      /* Светло-серый фон страницы */
+  --bg-card: #FFFFFF;      /* Белый фон карточек */
+  --color-primary: #7B2530; /* Бордовый цвет */
+  --color-primary-hover: #5E1B24;
+  --color-text: #2D2D2D;
+  --color-muted: #8E8E8E;
+  --color-free: #E992A1;    /* Розовый бейдж "Бесплатно" */
+  --color-schedule: #FCEAB8;/* Желтый фон расписания */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg-page);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Общие кнопки */
+.btn {
+  background: var(--color-primary); color: white; border: none;
+  padding: 10px 20px; border-radius: 6px; cursor: pointer;
+  font-weight: 500; transition: 0.2s; display: inline-block;
+}
+.btn:hover { background: var(--color-primary-hover); }
+
+/* Тэги (расписание) */
+.time-tag {
+  background: var(--color-schedule); padding: 4px 8px; border-radius: 4px;
+  font-size: 12px; font-weight: 500; display: inline-block;
+}
+
+/* Перекрашиваем дефолтные чекбоксы в цвет бренда */
+input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
